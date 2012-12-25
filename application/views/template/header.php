@@ -23,14 +23,15 @@
 					<ul class="nav nav-pills">
 						
 						<?php if(!isset($login)) : ?>
-						<li><a href="#"><i class="icon-home icon-white"></i> Beranda</a></li>
-						<li><a href="#"><i class="icon-book icon-white"></i> Ketentuan Penggunaan</a></li>
+						<li><?php echo anchor('home','<i class="icon-home icon-white"></i> Beranda') ?></li>
+						<li><?php echo anchor('term','<i class="icon-book icon-white"></i> Ketentuan Penggunaan') ?></li>
 						<?php endif; ?>
 
 						<?php if(isset($login)) : ?>
-						<li><a href="#"><i class="icon-home icon-white"></i> Beranda</a></li>
-						<li><a href="#"><i class="icon-book icon-white"></i> Pengumuman</a></li>
-						<li><a href="#"><i class="icon-book icon-white"></i> Akademik</a></li>
+						<li><?php echo anchor('home','<i class="icon-home icon-white"></i> Beranda') ?></li>
+						<li><?php echo anchor('profil','<i class="icon-user icon-white"></i> Profil') ?></li>
+						<li><?php echo anchor('pengumuman','<i class="icon-bullhorn icon-white"></i> Pengumuman') ?></li>
+						<li><?php echo anchor('akademik','<i class="icon-book icon-white"></i> Akademik') ?></li>
 						<?php endif; ?>
 
 					</ul>

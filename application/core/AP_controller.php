@@ -28,11 +28,29 @@ class AP_Controller extends CI_Controller{
 		$this->data['footer'] = $this->load->view('template/footer');
 	}
 
-	function setContent($dest = 'welcome_message', $data_header = null, $data_content = null, $data_footer = null){
+	function setContent($dest = 'welcome_message', $data_content = null, $data_header = null, $data_footer = null){
 		$this->getHeader($data_header);
 		$this->load->view($dest, $data_content);
 		$this->getFooter($data_footer);
 	}
+
+}
+
+class Secure_Controller extends AP_Controller{
+
+	function __construct()
+    {
+        parent::__construct();
+ 
+        $this->load->library('session');
+        $this->load->library('cookie');
+        $this->load->helper('url');
+ 
+        if($this->session->userdata('user') === FALSE and $this->input->cookie('user', TRUE))
+        {
+            redirect('auth', 'refresh');
+        }
+    }
 
 }
 

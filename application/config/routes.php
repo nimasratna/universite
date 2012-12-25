@@ -41,6 +41,10 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 
+$route['mhs'] = 'user/show_mahasiswa';
+$route['mhs/(:num)'] = 'user/show_mahasiswa/nim/$1';
+$route['mhs/search/(:any)'] = 'user/show_mahasiswa/search/$1';
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

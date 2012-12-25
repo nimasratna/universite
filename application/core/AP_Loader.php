@@ -52,7 +52,7 @@ class AP_Loader extends CI_Loader{
 		}
 
 		if(!is_array($name)){
-			$image = "<img src='".base_url()."/assets/image/{$name}' {$inline_option} />";
+			$image = "<img src='".base_url()."/assets/img/{$name}' {$inline_option} />";
 			echo $image;
 		} else {
 			$image = "<img src='' {$inline_option} />";
